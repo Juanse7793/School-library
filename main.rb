@@ -3,6 +3,15 @@ class Person
     attr_reader :id
 
     def initialize(name = "unknown", age, parent_permission = true)
-       
+        @id = rand(1..100)
+        @name = name
+        @age = age
+        @parent_permission = parent_permission
     end
+
+    def is_of_age?
+        @age >= 18
+     end
+ 
+     private :is_of_age?
 end
