@@ -24,6 +24,14 @@ class App
         book = Book.new(name, author)
         @list_books.push(book)
     end
-
+    
+    def list_all_books
+        puts 'List of all books:'
+        puts "\n\n"
+        list_books.each do |book|
+          puts "Title: #{book.title}, Author: #{book.author}"
+        end
+        puts "\n\n"
+      end
 
 end
