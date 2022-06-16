@@ -24,7 +24,7 @@ class App
         book = Book.new(name, author)
         @list_books.push(book)
     end
-    
+
     def list_all_books
         puts 'List of all books:'
         puts "\n\n"
@@ -32,6 +32,37 @@ class App
           puts "Title: #{book.title}, Author: #{book.author}"
         end
         puts "\n\n"
+    end
+
+    def create_person # rubocop:disable Metrics/MethodLength
+        puts 'Do you want to create a Student (1) or a Teacher (2)?'
+        option = gets.chomp.to_i
+        case option
+        when 1
+          puts 'Enter the name of the student:'
+          name = gets.chomp
+          puts 'Enter the age of the student:'
+          age = gets.chomp.to_i
+          puts 'Has the student a parent permission? [y/n]'
+          parent_permission = gets.chomp.downcase == 'y'
+          puts 'Student created!'
+          puts "\n\n"
+    
+          student = Student.new(age, name, parent_permission: parent_permission)
+          @list_people.push(student)
+        when 2
+          puts 'Enter the name of the teacher:'
+          name = gets.chomp
+          puts 'Enter the age of the teacher:'
+          age = gets.chomp.to_i
+          puts 'Enter the specialization of the teacher:'
+          specialization = gets.chomp
+          puts 'Teacher Created!'
+          puts "\n\n"
+    
+          teacher = Teacher.new(age, name, specialization, parent_permission: true)
+          @list_people.push(teacher)
+        end
       end
 
 end
