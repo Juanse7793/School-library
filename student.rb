@@ -4,7 +4,7 @@ require './classroom'
 class Student < Person
   def initialize(age, name, classroom = nil, parent_permission: true)
     @classroom = classroom
-    super(age, name, parent_permission)
+    super(age, name, parent_permission: parent_permission)
   end
 
   def play_hooky?
