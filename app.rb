@@ -63,6 +63,15 @@ class App
           teacher = Teacher.new(age, name, specialization, parent_permission: true)
           @list_people.push(teacher)
         end
+    end
+
+    def list_all_people
+        puts 'List of all people:'
+        puts "\n\n"
+        list_people.each do |person|
+          puts "[#{person.class}] Name: #{person.name} ID: #{person.id} Age: #{person.age}"
+        end
+        puts "\n\n"
       end
 
 end
