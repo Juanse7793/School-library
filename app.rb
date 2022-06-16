@@ -94,4 +94,15 @@ class App
         puts 'Rental created!'
     end
 
+    def list_all_rentals_by_person_id
+        puts 'Enter the ID of the person:'
+        id = gets.chomp.to_i
+        puts "List of all rentals for the person with ID: #{id}"
+        puts "\n\n"
+        rentals.each do |rental|
+          puts "Date: #{rental.date}, Book: #{rental.book.title} by #{rental.book.author}" if rental.person.id == id
+        end
+        puts "\n\n"
+    end
+
 end
