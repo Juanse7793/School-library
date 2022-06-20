@@ -41,6 +41,12 @@ Use the following steps to run this Project locally:
 - Twitter: [@Juanse77930](https://twitter.com/Juanse77930)
 - LinkedIn: [Juan Sebastian Sotomayor](https://linkedin.com/in/juansebastiansotomayor)
 
+👤 **Ivan Gaona**
+
+- GitHub: [@ivaan1992](github.com/ivaan1992)
+- Twitter: [@ivangaona92](https://twitter.com/ivangaona92)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/ivan-linares-gaona/)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
