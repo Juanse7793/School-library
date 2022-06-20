@@ -142,4 +142,3 @@ class App
     interface
   end
 end
-
