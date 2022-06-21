@@ -16,7 +16,8 @@ module PeopleData
         end
         next unless person['class'] == 'Teacher'
 
-        teacher = Teacher.new(person['age'], person['name'], person['specialization'], parent_permission: person['parent_permission'])
+        teacher = Teacher.new(person['age'], person['name'], person['specialization'],
+                              parent_permission: person['parent_permission'])
         teacher.id = person['id']
         data << teacher
       end

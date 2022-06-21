@@ -19,7 +19,6 @@ class App
     @rentals = load_rentals
   end
 
-
   def save
     save_books
     save_people
