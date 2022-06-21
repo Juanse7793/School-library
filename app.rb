@@ -4,13 +4,15 @@ require './book'
 require './rental'
 require './person'
 require './data-classes/books_data_class'
+require './data-classes/people_data_class'
 
 class App
   include BooksData
+  include PeopleData
   attr_accessor :list_people, :list_books, :rentals
 
   def initialize
-    @list_people = []
+    @list_people = load_people
     @list_books = load_books
     @rentals = []
   end
@@ -18,6 +20,7 @@ class App
 
   def save
     save_books
+    save_people
   end
 
   def interface
@@ -90,6 +93,7 @@ class App
 
       student = Student.new(age, name, parent_permission: parent_permission)
       @list_people.push(student)
+      save
       interface
     when 2
       puts 'Enter the name of the teacher:'
@@ -103,6 +107,7 @@ class App
 
       teacher = Teacher.new(age, name, specialization, parent_permission: true)
       @list_people.push(teacher)
+      save
       interface
     end
   end
