@@ -5,22 +5,25 @@ require './rental'
 require './person'
 require './data-classes/books_data_class'
 require './data-classes/people_data_class'
+require './data-classes/rental_data_class'
 
 class App
   include BooksData
   include PeopleData
+  include RentalsData
   attr_accessor :list_people, :list_books, :rentals
 
   def initialize
     @list_people = load_people
     @list_books = load_books
-    @rentals = []
+    @rentals = load_rentals
   end
 
 
   def save
     save_books
     save_people
+    save_rentals
   end
 
   def interface
@@ -140,6 +143,7 @@ class App
     @rentals.push(rental)
 
     puts 'Rental created!'
+    save
     interface
   end
 
