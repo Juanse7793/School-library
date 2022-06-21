@@ -1,0 +1,1 @@
+[{"id":412,"name":"Nachito Sotomayor","age":2,"parent_permission":false,"class":"Student"},{"id":737,"name":"Mateo Muñoz","age":24,"parent_permission":true,"class":"Student"},{"id":204,"name":"Juan Sotomayor","age":28,"parent_permission":true,"class":"Teacher","specialization":"Math"}]

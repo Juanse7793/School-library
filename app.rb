@@ -3,14 +3,26 @@ require './teacher'
 require './book'
 require './rental'
 require './person'
+require './data-classes/books_data_class'
+require './data-classes/people_data_class'
+require './data-classes/rental_data_class'
 
 class App
+  include BooksData
+  include PeopleData
+  include RentalsData
   attr_accessor :list_people, :list_books, :rentals
 
   def initialize
-    @list_people = []
-    @list_books = []
-    @rentals = []
+    @list_people = load_people
+    @list_books = load_books
+    @rentals = load_rentals
+  end
+
+  def save
+    save_books
+    save_people
+    save_rentals
   end
 
   def interface
@@ -53,6 +65,7 @@ class App
     puts "\n\n"
     book = Book.new(name, author)
     @list_books.push(book)
+    save
     interface
   end
 
@@ -82,6 +95,7 @@ class App
 
       student = Student.new(age, name, parent_permission: parent_permission)
       @list_people.push(student)
+      save
       interface
     when 2
       puts 'Enter the name of the teacher:'
@@ -95,6 +109,7 @@ class App
 
       teacher = Teacher.new(age, name, specialization, parent_permission: true)
       @list_people.push(teacher)
+      save
       interface
     end
   end
@@ -127,6 +142,7 @@ class App
     @rentals.push(rental)
 
     puts 'Rental created!'
+    save
     interface
   end
 
