@@ -3,14 +3,21 @@ require './teacher'
 require './book'
 require './rental'
 require './person'
+require './data-classes/books_data_class'
 
 class App
+  include BooksData
   attr_accessor :list_people, :list_books, :rentals
 
   def initialize
     @list_people = []
-    @list_books = []
+    @list_books = load_books
     @rentals = []
+  end
+
+
+  def save
+    save_books
   end
 
   def interface
@@ -53,6 +60,7 @@ class App
     puts "\n\n"
     book = Book.new(name, author)
     @list_books.push(book)
+    save
     interface
   end
 
