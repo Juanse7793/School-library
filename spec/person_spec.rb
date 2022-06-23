@@ -2,7 +2,16 @@ require_relative 'spec_helper'
 
 describe Person do
   before :each do
-    @person = Person.new 'Person', 29, true
+    age = 29
+    name = 'Person'
+    parent_permission = true
+    @person = Person.new(name, age, parent_permission: parent_permission)
+  end
+
+  context 'Checks to see if a variable is assigned' do
+    it 'to an instance of the Person class' do
+      @person.should be_an_instance_of Person
+    end
   end
 
   context 'Check person name' do
@@ -22,5 +31,4 @@ describe Person do
       expect(@person.can_use_services?).to be true
     end
   end
-
 end
