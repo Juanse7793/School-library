@@ -93,7 +93,7 @@ class App
       puts 'Student created!'
       puts "\n\n"
 
-      student = Student.new(age, name, parent_permission: parent_permission)
+      student = Student.new(age, name, parent_permission:)
       @list_people.push(student)
       save
       interface
