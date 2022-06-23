@@ -9,7 +9,7 @@ describe Student do
   end
 
   it 'plays hooky' do
-    person1 = Student.new(24, 'Edwin')
+    person1 = Student.new(24, 'Juan')
     expect(person1.play_hooky).to eq "¯\(ツ)/¯"
   end
 end
