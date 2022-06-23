@@ -5,7 +5,7 @@ describe Person do
     age = 29
     name = 'Person'
     parent_permission = true
-    @person = Person.new(name, age, parent_permission: parent_permission)
+    @person = Person.new(age, name, parent_permission: parent_permission)
   end
 
   context 'Checks to see if a variable is assigned' do
