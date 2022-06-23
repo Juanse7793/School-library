@@ -11,5 +11,5 @@ describe Student do
   it 'plays hooky' do
     person1 = Student.new(24, 'Edwin')
     expect(person1.play_hooky).to eq "¯\(ツ)/¯"
-  end  
+  end
 end

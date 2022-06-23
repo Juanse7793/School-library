@@ -23,7 +23,7 @@ describe Classroom do
       name = 'Juancho'
       age = 27
       parent_permission = true
-      student = Student.new(name, age, parent_permission: parent_permission)
+      student = Student.new(name, age, parent_permission:)
       @classroom.add_student(student)
       @classroom.students.should eql [student]
     end

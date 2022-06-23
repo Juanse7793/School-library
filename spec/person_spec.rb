@@ -10,8 +10,8 @@ describe Person do
 
   it 'cut name' do
     person = Person.new(29, 'Ivan_Gaona')
-    person.validate_name (person.name)
+    person.validate_name(person.name)
     print person.name.length
     expect(person.name.length).to eq 10
-  end  
+  end
 end

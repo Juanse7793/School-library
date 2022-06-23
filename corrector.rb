@@ -1,7 +1,5 @@
 class Corrector
   def correct_name(name)
-    if not name.is_a?(Integer) then
-        name.capitalize
-    end
+    name.capitalize unless name.is_a?(Integer)
   end
 end
