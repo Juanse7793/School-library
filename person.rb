@@ -2,6 +2,7 @@ require './nameable'
 require './decorator'
 require './rental'
 require './book'
+require './corrector'
 
 class Person < Nameable
   attr_accessor :name, :age, :rental, :id, :parent_permission
@@ -9,7 +10,8 @@ class Person < Nameable
   def initialize(age, name = 'unknown', parent_permission: true)
     super()
     @id = Random.rand(1..1000)
-    @name = name
+    @corrector = Corrector.new
+    @name = validate_name(name)
     @age = age
     @parent_permission = parent_permission
     @rental = []
@@ -31,5 +33,13 @@ class Person < Nameable
 
   def rent(rental)
     @rental << rental
+  end
+
+  def add_rental(date, book)
+    Rental.new(date, book, self)
+  end
+
+  def validate_name(name)
+    @corrector.correct_name(name)
   end
 end
