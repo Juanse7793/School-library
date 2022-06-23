@@ -1,25 +1,13 @@
 require_relative 'spec_helper'
 
 describe Book do
-  before :each do
-    @book = Book.new 'title', 'author'
+  it 'when testing Book' do
+    book1 = Book.new('Romeo & Juliet', 'Shakespeare')
+    expect(book1.title).to eq 'Romeo & Juliet'
   end
 
-  context 'creating a new instance' do
-    it 'return a new Book object' do
-      @book.should be_an_instance_of Book
-    end
-  end
-
-  context 'checking the title' do
-    it 'returns the rigth title' do
-      @book.title.should eql 'title'
-    end
-  end
-
-  context 'checking the author' do
-    it 'returns the rigth author' do
-      @book.author.should eql 'author'
-    end
+  it 'not be rented' do
+    book1 = Book.new('Romeo & Juliet', 'Shakespeare')
+    expect(book1.rental.length).to be 0
   end
 end

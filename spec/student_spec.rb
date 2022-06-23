@@ -1,34 +1,15 @@
 require_relative 'spec_helper'
 
 describe Student do
-  before :each do
-    @name = 'Pepe'
-    @age = 28
-    @parent_permission = true
-    @student = Student.new(@age, @name, parent_permission: @parent_permission)
-  end
-
-  context 'Check instance of student' do
-    it 'return an instance of student' do
-      @student.should be_an_instance_of Student
+  context 'testing person' do
+    it 'creates new instance of student' do
+      person = Student.new(29, 'Ivan')
+      expect(person.name).to eq 'Ivan'
     end
   end
 
-  context 'Check student name' do
-    it 'return the student name ' do
-      @student.name.should eql 'Pepe'
-    end
-  end
-
-  context 'Check student age' do
-    it 'return the student age ' do
-      @student.age.should eql 28
-    end
-  end
-
-  context 'Check student parent permission' do
-    it 'return the student permission ' do
-      expect(@student.can_use_services?).to be true
-    end
-  end
+  it 'plays hooky' do
+    person1 = Student.new(24, 'Edwin')
+    expect(person1.play_hooky).to eq "¯\(ツ)/¯"
+  end  
 end

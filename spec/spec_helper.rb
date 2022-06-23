@@ -6,5 +6,6 @@ require_relative '../teacher'
 require_relative '../decorator'
 require_relative '../nameable'
 require_relative '../classroom'
+require_relative '../corrector'
 
 require 'yaml'
